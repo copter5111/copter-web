@@ -42,3 +42,21 @@ if (but3) {
   });
 
 }
+const cer2 = document.querySelector("#cer")
+fetch("./copweb/cer.json")
+.then((response) => response.text())
+.then((text) => {
+const cer1 = JSON.parse(text)
+cer1.forEach(cer => {
+  const div = document.createElement("div")
+  const img = document.createElement("img")
+  const h2 = document.createElement("h2")
+  img.src=cer["photo"]
+  img.style.width="350px"
+  h2.textContent=cer["cer1"]
+  div.append(img)
+  div.append(h2)
+  cer2.append(div)
+  
+});
+})
